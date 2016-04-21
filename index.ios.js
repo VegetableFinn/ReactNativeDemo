@@ -15,39 +15,52 @@ import React, {
 class demo extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+        <View style={styles.container}>
+            <View style={[styles.item, styles.center]}>
+              <Text>酒店</Text>
+            </View>
+            <View style={styles.item}>
+              <View style={[styles.center, styles.flex]}>
+                <Text>海外酒店</Text>
+              </View>
+              <View style={[styles.center, styles.flex]}>
+                <Text>特惠酒店</Text>
+              </View>
+            </View>
+            <View style={styles.item}>
+              <View style={[styles.center, styles.flex]}>
+                <Text>团购</Text>
+              </View>
+              <View style={[styles.center, styles.flex]}>
+                <Text>客栈.公寓</Text>
+              </View>
+            </View>
+            <View></View>
+        </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  container:{
+    flex:1,
+    borderWidth:1,
+    borderColor: 'red',
+    flexDirection: 'row'
+  },
+  item:{
+    flex:1,
+    height:80,
+    borderColor: 'blue',
+    borderWidth:1
+  },
+  center:{
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    alignItems: 'center'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  flex:{
+    flex:1
+  }
 });
 
 AppRegistry.registerComponent('demo', () => demo);
